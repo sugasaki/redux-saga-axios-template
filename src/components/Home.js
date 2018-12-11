@@ -58,9 +58,9 @@ class Home extends Component {
             }
             placeholder="Search..."
           />
-        </Grid.Row>
 
-        <Grid.Row columns={12}>{this.state.searchString}</Grid.Row>
+          {this.state.searchString}
+        </Grid.Row>
 
         <Grid.Row columns={12}>
           {errorContents}
