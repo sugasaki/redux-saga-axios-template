@@ -1,4 +1,4 @@
-﻿import { createAction, createActions } from "redux-actions";
+﻿import { createAction } from "redux-actions";
 import * as ActionTypes from "./actionTypes";
 
 //アクションを作成する。クリック等のトリガーとなる。

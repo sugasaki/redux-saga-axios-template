@@ -1,5 +1,5 @@
-﻿import { call, put, takeEvery, take, fork, delay } from "redux-saga/effects";
-import { api, history } from "../services";
+﻿import { call, put, takeEvery } from "redux-saga/effects";
+import { api } from "../services";
 
 import * as ActionTypes from "../actions/actionTypes";
 import { actionCreators } from "../actions/index";

@@ -3,8 +3,8 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import "semantic-ui-css/semantic.min.css";
-import { Grid, Image, Message } from "semantic-ui-react";
-import { Icon, Input, Checkbox } from "semantic-ui-react";
+import { Grid, Message } from "semantic-ui-react";
+import { Icon, Input } from "semantic-ui-react";
 import { actionCreators } from "../redux/actions";
 
 import ResultTable from "./ResultTable";
@@ -31,8 +31,6 @@ class Home extends Component {
   }
 
   render() {
-    let loading = this.state.loading;
-
     let contents = this.props.isFetching ? <p>Loading...</p> : <ResultTable />;
 
     let errorContents = this.props.hasError ? (
