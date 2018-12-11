@@ -3,10 +3,11 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import "semantic-ui-css/semantic.min.css";
-import { Grid, Image } from "semantic-ui-react";
-import { Button } from "semantic-ui-react";
+import { Grid, Image, Message } from "semantic-ui-react";
 import { Icon, Input, Checkbox } from "semantic-ui-react";
 import { actionCreators } from "../redux/actions";
+
+import ResultTable from "./ResultTable";
 
 class Home extends Component {
   displayName = Home.name;
@@ -15,54 +16,29 @@ class Home extends Component {
     super(props);
     this.state = {
       loading: true,
-      message: "aa"
+      message: ""
     };
   }
 
   handleMessage(e) {
     this.setState({
-      message: e.target.value
+      searchString: e.target.value
     });
   }
 
   requestPosts() {
-    this.props.requestPosts({ message: this.state.message });
-  }
-
-  renderTable(forecasts) {
-    return (
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>userId</th>
-            <th>id</th>
-            <th>title</th>
-            <th>body</th>
-          </tr>
-        </thead>
-        <tbody>
-          {forecasts.map(forecast => (
-            <tr key={forecast.userId}>
-              <td>{forecast.userId}</td>
-              <td>{forecast.id}</td>
-              <td>{forecast.title}</td>
-              <td>{forecast.body}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
+    this.props.requestPosts(this.state.searchString);
   }
 
   render() {
     let loading = this.state.loading;
 
-    let contents = this.props.isFetching ? (
-      <p>
-        <em>Loading...</em>
-      </p>
+    let contents = this.props.isFetching ? <p>Loading...</p> : <ResultTable />;
+
+    let errorContents = this.props.hasError ? (
+      <Message error>{this.props.errorMessage}</Message>
     ) : (
-      this.renderTable(this.props.items)
+      <div />
     );
 
     return (
@@ -70,7 +46,7 @@ class Home extends Component {
         <Grid.Row columns={12}>
           <Input
             loading={this.props.isFetching}
-            onChange={this.handleMessage.bind(this)}
+            onChange={e => this.handleMessage(e)}
             icon={
               <Icon
                 name="search"
@@ -82,10 +58,13 @@ class Home extends Component {
             }
             placeholder="Search..."
           />
+        </Grid.Row>
 
+        <Grid.Row columns={12}>{this.state.searchString}</Grid.Row>
+
+        <Grid.Row columns={12}>
+          {errorContents}
           {contents}
-
-          {this.state.message}
         </Grid.Row>
       </Grid>
     );

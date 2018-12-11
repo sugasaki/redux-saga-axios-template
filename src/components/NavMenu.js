@@ -1,15 +1,19 @@
 import React, { Component } from "react";
+import { NavLink, Link } from "react-router-dom";
+
 import {
-  Collapse,
   Container,
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  NavItem,
-  NavLink
-} from "reactstrap";
-import { Link } from "react-router-dom";
-import "./NavMenu.css";
+  Divider,
+  Dropdown,
+  Grid,
+  Header,
+  Image,
+  List,
+  Menu,
+  Segment
+} from "semantic-ui-react";
+
+//import "./NavMenu.css";
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
@@ -32,30 +36,19 @@ export class NavMenu extends Component {
   render() {
     return (
       <header>
-        <Navbar
-          className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3"
-          light
-        >
+        <Menu fixed="top" inverted>
           <Container>
-            <NavbarBrand tag={Link} to="/">
-              redux-saga-axios-template
-            </NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse
-              className="d-sm-inline-flex flex-sm-row-reverse"
-              isOpen={!this.state.collapsed}
-              navbar
-            >
-              <ul className="navbar-nav flex-grow">
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/">
-                    Home
-                  </NavLink>
-                </NavItem>
-              </ul>
-            </Collapse>
+            <Menu.Item header as={NavLink} exact to="/" children="Home">
+              <Image
+                size="mini"
+                src="/logo.png"
+                style={{ marginRight: "1.5em" }}
+              />
+              Home
+            </Menu.Item>
+            <Menu.Item header as={NavLink} exact to="/unit" children="unit" />
           </Container>
-        </Navbar>
+        </Menu>
       </header>
     );
   }

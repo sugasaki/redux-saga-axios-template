@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Container } from 'reactstrap';
-import { NavMenu } from './NavMenu';
+import React, { Component } from "react";
+import { Container } from "semantic-ui-react";
+import { NavMenu } from "./NavMenu";
 
 export class Layout extends Component {
   static displayName = Layout.name;
 
-  render () {
+  render() {
     return (
       <div>
         <NavMenu />
-        <Container>
+        <Container style={{ marginTop: "7em" }}>
           {this.props.children}
         </Container>
       </div>

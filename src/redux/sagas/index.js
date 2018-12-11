@@ -1,32 +1,28 @@
-﻿import { call, put, takeEvery, take, delay } from "redux-saga/effects";
+﻿import { call, put, takeEvery, take, fork, delay } from "redux-saga/effects";
+import { api, history } from "../services";
 
 import * as ActionTypes from "../actions/actionTypes";
 import { actionCreators } from "../actions/index";
 
-import axios from "axios";
-
-export function axiosPostsApi(data) {
-  const url = `https://jsonplaceholder.typicode.com/posts`;
-
-  return axios({
-    method: "get",
-    url: url
-  });
-}
-
+//fetching Posts
 export function* fetchPosts(action) {
-  //yield delay(2000)
-  //    yield put(actions.requestPosts(reddit))
+  console.warn(action.payload);
 
-  //const posts = yield call(fetchPostsApi, {})
-  //yield put(actionCreators.receivePosts(posts))
+  //fetch axiosPostsApi
+  let data = action.payload;
+  if (!data) data = "";
+  const { result, err } = yield call(api.fetchPosts, data);
+  console.warn(result);
 
-  //const action = yield take(ActionTypes.USER_FETCH_REQUESTED)
-
-  const posts = yield call(axiosPostsApi, {});
-  yield put(actionCreators.receivePosts(posts.data));
+  if (result) {
+    //call receivePosts action
+    yield put(actionCreators.receivePosts(result.data));
+  } else {
+    yield put(actionCreators.faildPosts(err.message));
+  }
 }
 
+//initial rudux-saga
 export default function* rootSaga() {
   yield takeEvery(ActionTypes.USER_FETCH_REQUESTED, fetchPosts);
 }
