@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/redux-saga-axios-template/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "f1893bcff6d8e290ae56",
-    "url": "/redux-saga-axios-template/static/js/main.f1893bcf.chunk.js"
+    "revision": "fe16048cc78169e0d2cb",
+    "url": "/redux-saga-axios-template/static/js/main.fe16048c.chunk.js"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
@@ -16,12 +16,16 @@ self.__precacheManifest = [
     "url": "/redux-saga-axios-template/static/js/runtime~main.8af553b4.js"
   },
   {
+    "revision": "cd6c777f1945164224dee082abaea03a",
+    "url": "/redux-saga-axios-template/static/media/outline-icons.cd6c777f.woff2"
+  },
+  {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
     "url": "/redux-saga-axios-template/static/media/outline-icons.ef60a4f6.woff"
   },
   {
-    "revision": "cd6c777f1945164224dee082abaea03a",
-    "url": "/redux-saga-axios-template/static/media/outline-icons.cd6c777f.woff2"
+    "revision": "9c74e172f87984c48ddf5c8108cabe67",
+    "url": "/redux-saga-axios-template/static/media/flags.9c74e172.png"
   },
   {
     "revision": "701ae6abd4719e9c2ada3535a497b341",
@@ -30,10 +34,6 @@ self.__precacheManifest = [
   {
     "revision": "ad97afd3337e8cda302d10ff5a4026b8",
     "url": "/redux-saga-axios-template/static/media/outline-icons.ad97afd3.ttf"
-  },
-  {
-    "revision": "9c74e172f87984c48ddf5c8108cabe67",
-    "url": "/redux-saga-axios-template/static/media/flags.9c74e172.png"
   },
   {
     "revision": "0ab54153eeeca0ce03978cc463b257f7",
@@ -56,6 +56,10 @@ self.__precacheManifest = [
     "url": "/redux-saga-axios-template/static/media/icons.8e3c7f55.eot"
   },
   {
+    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
+    "url": "/redux-saga-axios-template/static/media/icons.b87b9ba5.ttf"
+  },
+  {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
     "url": "/redux-saga-axios-template/static/media/brand-icons.13db00b7.eot"
   },
@@ -64,23 +68,19 @@ self.__precacheManifest = [
     "url": "/redux-saga-axios-template/static/media/brand-icons.c5ebe0b3.ttf"
   },
   {
-    "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
-    "url": "/redux-saga-axios-template/static/media/icons.b87b9ba5.ttf"
-  },
-  {
     "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
     "url": "/redux-saga-axios-template/static/media/outline-icons.82f60bd0.svg"
   },
   {
-    "revision": "e69fef67dd6f49e3241a",
-    "url": "/redux-saga-axios-template/static/js/1.e69fef67.chunk.js"
+    "revision": "d594f69d268bcab19df2",
+    "url": "/redux-saga-axios-template/static/js/1.d594f69d.chunk.js"
   },
   {
-    "revision": "e69fef67dd6f49e3241a",
-    "url": "/redux-saga-axios-template/static/css/1.e44fa493.chunk.css"
+    "revision": "d594f69d268bcab19df2",
+    "url": "/redux-saga-axios-template/static/css/1.fc28c467.chunk.css"
   },
   {
-    "revision": "e54e87c6c417bf5174d012ef4712691a",
+    "revision": "e2845299ab0f556ba6cfc85518c9d006",
     "url": "/redux-saga-axios-template/index.html"
   }
 ];
