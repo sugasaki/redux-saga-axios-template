@@ -1,7 +1,7 @@
 # redux-saga-axios-template
 
 this project
-react & redux-saga & axios App template
+react & redux-saga & axios & react router App template
 
 # 1. react
 

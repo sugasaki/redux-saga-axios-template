@@ -41,12 +41,18 @@ export class NavMenu extends Component {
             <Menu.Item header as={NavLink} exact to="/" children="Home">
               <Image
                 size="mini"
-                src="/logo.png"
+                src="./logo.png"
                 style={{ marginRight: "1.5em" }}
               />
               Home
             </Menu.Item>
-            <Menu.Item header as={NavLink} exact to="/unit" children="unit" />
+            <Menu.Item
+              header
+              as={NavLink}
+              exact
+              to="/counter"
+              children="Counter"
+            />
           </Container>
         </Menu>
       </header>
