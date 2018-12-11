@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/redux-saga-axios-template/precache-manifest.6f4482934830366dab0890dec445ec58.js"
+  "/redux-saga-axios-template/precache-manifest.6d949763ddee84f0f261329f8e84ac84.js"
 );
 
 workbox.clientsClaim();
