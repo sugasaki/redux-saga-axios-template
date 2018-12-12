@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
-import { connectRouter, routerMiddleware } from "connected-react-router";
+import { routerMiddleware } from "connected-react-router";
 import createSagaMiddleware, { END } from "redux-saga";
 import { createLogger } from "redux-logger";
 import rootReducer from "../reducers";

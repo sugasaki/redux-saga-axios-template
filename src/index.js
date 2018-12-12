@@ -1,14 +1,9 @@
 import "react-app-polyfill/ie11"; // For IE 11 support
 
 import React from "react";
-import { applyMiddleware, compose, createStore } from "redux";
 import { createBrowserHistory } from "history";
-import { routerMiddleware } from "connected-react-router";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
-
-// import { ConnectedRouter } from "react-router-redux";
-// import { createBrowserHistory } from "history";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";

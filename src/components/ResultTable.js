@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Table } from "semantic-ui-react";
 
@@ -49,7 +49,6 @@ function renderTableSingle(item) {
     </Table>
   );
 }
-
 
 const ResultTable = props => {
   //console.log(Array.isArray(this.props.items));
