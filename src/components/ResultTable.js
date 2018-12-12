@@ -52,7 +52,7 @@ class ResultTable extends Component {
   }
 
   render() {
-    console.log(Array.isArray(this.props.items));
+    //console.log(Array.isArray(this.props.items));
     let contents = Array.isArray(this.props.items)
       ? this.renderTable(this.props.items)
       : this.renderTableSingle(this.props.items);

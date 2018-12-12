@@ -8,7 +8,7 @@ function callApi(endpoint) {
   const fullUrl =
     endpoint.indexOf(API_ROOT) === -1 ? API_ROOT + endpoint : endpoint;
 
-  console.warn(fullUrl);
+  console.log("callApi", fullUrl);
 
   return axios
     .get(fullUrl)

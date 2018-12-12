@@ -6,13 +6,13 @@ import { actionCreators } from "../actions/index";
 
 //fetching Posts
 export function* fetchPosts(action) {
-  console.warn(action.payload);
+  console.log("action.payload", action.payload);
 
   //fetch axiosPostsApi
   let data = action.payload;
   if (!data) data = "";
   const { result, err } = yield call(api.fetchPosts, data);
-  console.warn(result);
+  console.log("call response", result);
 
   if (result) {
     //call receivePosts action
