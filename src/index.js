@@ -1,28 +1,33 @@
 import "react-app-polyfill/ie11"; // For IE 11 support
 
 import React from "react";
+import { applyMiddleware, compose, createStore } from "redux";
+import { createBrowserHistory } from "history";
+import { routerMiddleware } from "connected-react-router";
+import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+
+// import { ConnectedRouter } from "react-router-redux";
+// import { createBrowserHistory } from "history";
+
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-import { Provider } from "react-redux";
 import configureStore from "./redux/store/configureStore";
 import rootSaga from "./redux/sagas";
 
 const baseUrl = document.getElementsByTagName("base")[0].getAttribute("href");
-const rootElement = document.getElementById("root");
+const history = createBrowserHistory({ basename: baseUrl });
 
-const store = configureStore();
+const initialState = window.initialReduxState;
+const store = configureStore(history, initialState);
 store.runSaga(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename={baseUrl}>
-      <App />
-    </BrowserRouter>
+    <App history={history} />
   </Provider>,
-  rootElement
+  document.getElementById("react-root")
 );
 
 serviceWorker.unregister();

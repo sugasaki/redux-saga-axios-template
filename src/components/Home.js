@@ -70,6 +70,6 @@ class Home extends Component {
 }
 
 export default connect(
-  state => state.units, //  ../reducers/index.js で定義
+  state => state.home, //  ../reducers/index.js で定義
   dispatch => bindActionCreators(actionCreators, dispatch)
 )(Home);

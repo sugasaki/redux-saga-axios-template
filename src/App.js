@@ -1,17 +1,14 @@
-import React, { Component } from "react";
-import { Route } from "react-router";
-import { Layout } from "./components/Layout";
-import Home from "./components/Home";
-import Counter from "./components/Counter";
-export default class App extends Component {
-  static displayName = App.name;
+import React from "react";
+import PropTypes from "prop-types";
+import { ConnectedRouter } from "connected-react-router";
+import routes from "./routes";
 
-  render() {
-    return (
-      <Layout>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/counter" component={Counter} />
-      </Layout>
-    );
-  }
-}
+const App = ({ history }) => {
+  return <ConnectedRouter history={history}>{routes}</ConnectedRouter>;
+};
+
+App.propTypes = {
+  history: PropTypes.object
+};
+
+export default App;

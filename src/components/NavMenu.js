@@ -5,47 +5,22 @@ import { Container, Image, Menu } from "semantic-ui-react";
 
 //import "./NavMenu.css";
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
+const NavMenu = () => (
+  <header>
+    <Menu fixed="top" inverted>
+      <Container>
+        <Menu.Item header as={NavLink} exact to="/" children="Home">
+          <Image
+            size="mini"
+            src="./logo.png"
+            style={{ marginRight: "1.5em" }}
+          />
+          Home
+        </Menu.Item>
+        <Menu.Item header as={NavLink} exact to="/counter" children="Counter" />
+      </Container>
+    </Menu>
+  </header>
+);
 
-  constructor(props) {
-    super(props);
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
-
-  toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
-  render() {
-    return (
-      <header>
-        <Menu fixed="top" inverted>
-          <Container>
-            <Menu.Item header as={NavLink} exact to="/" children="Home">
-              <Image
-                size="mini"
-                src="./logo.png"
-                style={{ marginRight: "1.5em" }}
-              />
-              Home
-            </Menu.Item>
-            <Menu.Item
-              header
-              as={NavLink}
-              exact
-              to="/counter"
-              children="Counter"
-            />
-          </Container>
-        </Menu>
-      </header>
-    );
-  }
-}
+export default NavMenu;

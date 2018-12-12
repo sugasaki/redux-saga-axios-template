@@ -1,35 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { increment, decrement } from "../redux/actions/counter";
 
-export default class Counter extends Component {
-  static displayName = Counter.name;
+const Counter = props => (
+  <div>
+    <h1>Counter</h1>
 
-  constructor(props) {
-    super(props);
-    this.state = { currentCount: 0 };
-    this.incrementCounter = this.incrementCounter.bind(this);
-  }
+    <p>This is a simple example of a React component.</p>
 
-  incrementCounter() {
-    this.setState({
-      currentCount: this.state.currentCount + 1
-    });
-  }
+    <p>
+      Current count: <strong>{props.count}</strong>
+    </p>
 
-  render() {
-    return (
-      <div>
-        <h1>Counter</h1>
+    <button onClick={props.increment}>+</button>
+    <button onClick={props.decrement}>-</button>
+  </div>
+);
 
-        <p>This is a simple example of a React component.</p>
+Counter.propTypes = {
+  count: PropTypes.number,
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired
+};
 
-        <p>
-          Current count: <strong>{this.state.currentCount}</strong>
-        </p>
+const mapStateToProps = state => ({
+  count: state.count
+});
 
-        <button className="btn btn-primary" onClick={this.incrementCounter}>
-          Increment
-        </button>
-      </div>
-    );
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  increment: () => dispatch(increment()),
+  decrement: () => dispatch(decrement())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Counter);
