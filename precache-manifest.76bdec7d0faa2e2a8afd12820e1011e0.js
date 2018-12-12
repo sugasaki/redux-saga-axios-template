@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/redux-saga-axios-template/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "6bb9e501e9fe49d0d5d1",
-    "url": "/redux-saga-axios-template/static/js/main.6bb9e501.chunk.js"
+    "revision": "20bda1be7c89576fe354",
+    "url": "/redux-saga-axios-template/static/js/main.20bda1be.chunk.js"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
@@ -72,15 +72,15 @@ self.__precacheManifest = [
     "url": "/redux-saga-axios-template/static/media/outline-icons.82f60bd0.svg"
   },
   {
-    "revision": "9b738672e5f8c1964af8",
-    "url": "/redux-saga-axios-template/static/js/1.9b738672.chunk.js"
+    "revision": "8a5a52a1f558c6838abe",
+    "url": "/redux-saga-axios-template/static/js/1.8a5a52a1.chunk.js"
   },
   {
-    "revision": "9b738672e5f8c1964af8",
-    "url": "/redux-saga-axios-template/static/css/1.a381b1f8.chunk.css"
+    "revision": "8a5a52a1f558c6838abe",
+    "url": "/redux-saga-axios-template/static/css/1.8565ff13.chunk.css"
   },
   {
-    "revision": "4c5d6d78754458a553958dbf084f44df",
+    "revision": "fbf8ced0a34e0ec038b71bbe7722f338",
     "url": "/redux-saga-axios-template/index.html"
   }
 ];
